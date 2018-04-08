@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <meta charset="utf-8">
+    <title>SUDOKU</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SUDOKU</h1>
+      <form id="table">
+        <div class="form-control">
+          <table>
+            <tr>
+              <td><input id="00"type="text" class="form-control" data-X="0" data-Y="0"></td>
+              <td><input id="10"type="text" class="form-control" data-X="1" data-Y="0"></td>
+              <td><input id="20"type="text" class="form-control" data-X="2" data-Y="0"></td>
+              <td><input id="30"type="text" class="form-control" data-X="3" data-Y="0"></td>
+              <td><input id="40"type="text" class="form-control" data-X="4" data-Y="0"></td>
+              <td><input id="50"type="text" class="form-control" data-X="5" data-Y="0"></td>
+              <td><input id="60"type="text" class="form-control" data-X="6" data-Y="0"></td>
+              <td><input id="70"type="text" class="form-control" data-X="7" data-Y="0"></td>
+              <td><input id="80"type="text" class="form-control" data-X="8" data-Y="0"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="1"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="1"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="2"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="2"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="3"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="3"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="4"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="4"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="5"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="5"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="6"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="6"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="7"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="7"></td>
+            </tr>
+            <tr>
+              <td><input type="text" class="form-control" data-X="0" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="1" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="2" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="3" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="4" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="5" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="6" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="7" data-Y="8"></td>
+              <td><input type="text" class="form-control" data-X="8" data-Y="8"></td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
