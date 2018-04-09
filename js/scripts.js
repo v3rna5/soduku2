@@ -21,6 +21,8 @@ Board.prototype.getSet = function(num, row, col) {
   return true;
 }
 
+
+
 function restart(){
   renew();
   timer();
@@ -44,24 +46,19 @@ Board.prototype.generate = function(level) {
   var col = 0;
   var row = 0;
   var num = 0;
-  while (set <= level){
-    set++;
+  while (set < level) {
     col = Math.floor(Math.random() * 8);
     row = Math.floor(Math.random() * 8);
-    num = Math.floor(Math.random() * 9 + 1);
-    this.getSet(num, row, col);
-    while (!this.getSet(num, row, col)){
-      this.getSet(num, row, col)
-      col = Math.floor(Math.random() * 8);
-      row = Math.floor(Math.random() * 8);
-      num = Math.floor(Math.random() * 9 + 1);
+    num = Math.floor(Math.random() * 8 + 1);
+
+    if(!$("input#" + col + row).val()){
+      if(this.getSet(num, row, col)) {
+        set++;
+        $("input#" + col + row).val(num);
+      }
     }
-    $("input#" + col + row).val(num);
   }
-  return this.Board;
-
 }
-
 
 
 
@@ -70,7 +67,21 @@ Board.prototype.generate = function(level) {
 $(document).ready(function(){
   var board = new Board();
 
-  board.generate(35);
+  $("#easy").click(function(event){
+    event.preventDefault();
+    board.generate(35);
+      console.log(board);
+  })
+  $("#medium").click(function(event){
+    event.preventDefault();
+    board.generate(31);
+  })
+  $("#hard").click(function(event){
+    event.preventDefault();
+    board.generate(28);
+  })
+
+
   console.log(board);
 
   /* $("input#" + $target.data("col") + $target.data("row")).val("hey")*/
@@ -86,7 +97,7 @@ $(document).ready(function(){
       $target.val("");
     }
     console.log(board);
+  });
 
 
-  })
-})
+});
