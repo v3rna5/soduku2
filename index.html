@@ -8,10 +8,12 @@
     <meta charset="utf-8">
     <title>SUDOKU</title>
   </head>
-  <body>
+  <body background="img/sudoku.png">
     <div class="container">
-      <h1>SUDOKU</h1>
-      <form id="table">
+    <h1>SUDOKU</h1>
+      <div class="row">
+        <div class="col-md-6">
+        <form id="table">
         <table>
           <tr>
             <td><input id="00"type="text" class = "square" data-col="0" data-row="0"></td>
@@ -112,6 +114,9 @@
             <td><input id="78" type="text" class = "square" data-col="7" data-row="8"></td>
             <td><input id="88" type="text" class = "square" data-col="8" data-row="8"></td>
           </tr>
+
+          </table>
+        </form>
         </table>
       </form>
       <button type ="button" class = "btn btn-danger" id = "delete()">delete</button>
@@ -121,19 +126,42 @@
       <button type ="button" class = "btn btn-success" id = "medium">Medium</button>
       <button type ="button" class = "btn btn-success" id = "hard">Hard</button>
 
+
+      </div>
+      <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+            <h1 id = "time"> :)</h1>
+        <button type ="button" class = "btn btn-danger btn-lg" onclick = "delete()">delete</button>
+      </div><br>
+        <div class="row">
+        <button type ="button" class = "btn btn-warning btn-lg" onclick = "restart()">Restart</button>
+      </div><br>
+        <div class="row">
+        <button type ="button" class = "btn btn-info btn-lg" onclick = "showhint()">Hint</button>
+      </div>
     </div>
-    <h1 id = "time"></h1>
+  </div>
+      <div class="row">
+        <hr>
+        <button type ="button" class = "btn btn-success" onclick = "generate(easy)">Easy</button>
+        <button type ="button" class = "btn btn-success" onclick = "generate(medium)">Medium</button>
+        <button type ="button" class = "btn btn-success" onclick = "generate(hard)">Hard</button>
+      </div>
+    </div>
+
+
     <h1> Rules of sudoku</h1>
       <p> The Rules of Sudoku
-The classic Sudoku game involves a grid of 81 squares. The grid is divided into
-nine blocks, each containing nine squares.The rules of the game are simple: each
- of the nine blocks has to contain all the numbers 1-9 within its squares. Each number can only appear once in a row, column or box.
-The difficulty lies in that each vertical nine-square column, or horizontal
-nine-square line across, within the larger square, must also contain the numbers
-1-9, without repetition or omission. Every puzzle has just one correct solution.</p>
-  </body>
-  <script>
-function timer() {
+  The classic Sudoku game involves a grid of 81 squares. The grid is divided into
+  nine blocks, each containing nine squares.The rules of the game are simple: each
+   of the nine blocks has to contain all the numbers 1-9 within its squares. Each number can only appear once in a row, column or box.
+  The difficulty lies in that each vertical nine-square column, or horizontal
+  nine-square line across, within the larger square, must also contain the numbers
+  1-9, without repetition or omission. Every puzzle has just one correct solution.</p>
+
+    <script>
+    function timer() {
     var time = 0;
     var minutes = 0;
     setInterval(function(){
@@ -141,11 +169,11 @@ function timer() {
       if (time == 60){
         time = 0;
         minutes = minutes + 1
-
       }
     $("#time").text(minutes+":"+time);}, 1000)
-
 }
 timer();
 </script>
+</body>
+
 </html>
