@@ -1,37 +1,43 @@
 // Bussiness logic.
 
-// Constractor of Map object (to map the board).
-
-// Function to check the row for the duplicates.
-var checkRow = function() {
-  
+// Constractor of Map objects (to map the board).
+function Board() {
+  this.rows = [[], [], [], [], [], [], [], [], []];
+  this.columns = [[], [], [], [], [], [], [], [], []];
+  this.boxes = [[], [], [], [], [], [], [], [], []];
+  this.history = [];
 }
+
+// Function to check the value for the duplicates in a row, column and 3 by 3 box.
+Board.prototype.set = function(num, row, col) {
+  if (this.rows[row].includes(num) || this.columns[col].includes(num) || this.boxes[this.toBoxIndex(row, col)].includes(num)) {
+    return false;
+  }
+
+  this.rows[row].push(num);
+  this.columns[col].push(num);
+  this.boxes[board.toBoxIndex(row, col)].push(num);
+  this.history.push([row, col]);
+
+  return true;
+}
+
 
 
 
 // UI logic.
 
-var map = {
- "0": ["", "", "", "", "", "", "", ""],
- "1": ["", "", "", "", "", "", "", ""],
- "2": ["", "", "", "", "", "", "", ""],
- "3": ["", "", "", "", "", "", "", ""],
- "4": ["", "", "", "", "", "", "", ""],
- "5": ["", "", "", "", "", "", "", ""],
- "6": ["", "", "", "", "", "", "", ""],
- "7": ["", "", "", "", "", "", "", ""],
- "8": ["", "", "", "", "", "", "", ""]
-};
-
 $(document).ready(function(){
+  var board = new Board();
+
   $("#table input").keyup(function(e) {
     var $target = $(e.target);
-    var userInput = $("input#" + $target.data("x") + $target.data("y")).val();
-    console.log($target.data("x"));
-    console.log($target.data("y"));
-    //$target.val("hi");
-    //console.log(map[$target.data("y")][$target.data("x")]);
-    map[$target.data("y")][$target.data("x")] = userInput;
-    console.log(userInput);
+    var userInput = $target.val();
+
+    if (!board.set(userInput, $target.data("col"), $target.data("row"))) {
+      $target.val("");
+    }
+
+
   })
 })
