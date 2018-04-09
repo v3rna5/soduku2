@@ -22,6 +22,10 @@ Board.prototype.set = function(num, row, col) {
   return true;
 }
 
+function restart(){
+  renew();
+  timer();
+}
 
 
 
